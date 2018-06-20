@@ -100,6 +100,11 @@ public class DeadZonEditor : Editor
         Color transp = new Color(0, 0, 0, 0);
         Handles.DrawSolidRectangleWithOutline(vert, transp, Color.red);
 
+        /*
+         * @TODO: Make element 0 of deadzone cam use the following params:
+         * X = -19.25, Y = -3
+         * W = 38.5, H = 20
+         */
         for(int i = 0; i < cam.limits.Length; ++i)
         {
             Vector3[] vertLimit =

@@ -71,14 +71,6 @@ public class PlayerController : PhysicsObject
         animator.SetBool("grounded", grounded);
         animator.SetFloat("velocityX", Mathf.Abs(velocity.x) / maxSpeed);
 
-        double ep = Mathf.Abs(velocity.x) / maxSpeed;
-
-        if (move.x > 0) {
-            animator.SetTrigger("playerIdle");
-        } else {
-            animator.SetTrigger("playerRun");
-        }
-
         targetVelocity = move * maxSpeed;
     }
 

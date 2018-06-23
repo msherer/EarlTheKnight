@@ -13,7 +13,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - BlockingLayer
   - 
   - 
   - 
@@ -49,4 +49,10 @@ TagManager:
     locked: 0
   - name: Foreground
     uniqueID: 3895929355
+    locked: 0
+  - name: Units
+    uniqueID: 641862413
+    locked: 0
+  - name: Items
+    uniqueID: 1606210867
     locked: 0

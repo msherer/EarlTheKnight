@@ -35,6 +35,7 @@ public class PlayerController : PhysicsObject
         if (Input.GetButtonDown("Jump") && grounded)
         {
             velocity.y = jumpTakeOffSpeed;
+            animator.SetTrigger("playerJump");
         }
         else if (Input.GetButtonUp("Jump"))
         {
@@ -67,8 +68,16 @@ public class PlayerController : PhysicsObject
         /*
          * @TODO: Setup animations for our character so we can use the animator component.
          */
-        //animator.SetBool("grounded", grounded);
-        //animator.SetFloat("velocityX", Mathf.Abs(velocity.x) / maxSpeed);
+        animator.SetBool("grounded", grounded);
+        animator.SetFloat("velocityX", Mathf.Abs(velocity.x) / maxSpeed);
+
+        double ep = Mathf.Abs(velocity.x) / maxSpeed;
+
+        if (move.x > 0) {
+            animator.SetTrigger("playerIdle");
+        } else {
+            animator.SetTrigger("playerRun");
+        }
 
         targetVelocity = move * maxSpeed;
     }
